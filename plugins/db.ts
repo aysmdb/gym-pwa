@@ -1,8 +1,5 @@
-import Database from 'better-sqlite3';
+import { drizzle } from "drizzle-orm/libsql";
 
-const db = new Database('db/gym.db', {
-    verbose: console.log
-});
-db.pragma('journal_mode = WAL');
+const db = drizzle('./db/gym.db');
 
 export default db;
