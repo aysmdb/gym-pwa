@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint', 
     '@nuxt/icon', 
     '@nuxt/image',
-    '@vuestic/nuxt'
+    '@vuestic/nuxt',
+    '@pinia/nuxt'
   ],
   
   future: {
