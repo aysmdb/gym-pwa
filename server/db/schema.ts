@@ -1,4 +1,4 @@
-import { sql } from "drizzle-orm";
+import { type InferSelectModel, sql } from "drizzle-orm";
 import { int, sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
 
 export const testsTable = sqliteTable("tests", {
@@ -21,3 +21,5 @@ export const membersTable = sqliteTable("members", {
     updatedBy: int("updated_by").notNull(),
     deleted: integer("deleted", { mode: 'boolean' }).notNull().default(false),
 });
+
+export type Member = InferSelectModel<typeof membersTable>;
