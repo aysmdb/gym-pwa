@@ -2,9 +2,9 @@ import { defineConfig } from 'drizzle-kit';
 
 export default defineConfig({
     out: './drizzle',
-    schema: './db/schema.ts',
+    schema: './server/db/schema.ts',
     dialect: 'sqlite',
     dbCredentials: {
-        url: 'file:./db/gym.db',
+        url: process.env.DB_PATH!,
     }
 });
