@@ -26,6 +26,7 @@
   },
   "type": "module",
   "devDependencies": {
-    "drizzle-kit": "^0.30.6"
+    "drizzle-kit": "^0.30.6",
+    "sass": "^1.86.3"
   }
 }
