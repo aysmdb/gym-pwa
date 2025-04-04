@@ -8,5 +8,8 @@ export const useGlobalStore = defineStore("global", {
         toggleSidebar() {
             this.isSidebarMinimized = !this.isSidebarMinimized;
         },
+        set(val: boolean) {
+            this.isSidebarMinimized = val;
+        }
     }
 });
