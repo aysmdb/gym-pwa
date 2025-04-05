@@ -25,9 +25,9 @@
                     :key="item.name"
                     class="menu-item px-4 text-base cursor-pointer h-8"
                     v-bind="resolveLink(item)">
-                    <VaIcon :name="item.icon" class="pr-1" color="secondary">
+                    <VaIcon :name="item.icon" class="pr-1" color="secondary" />
                         {{  item.name }}
-                    </VaIcon>
+                    
                     </VaListItem>
                     <VaSeparator v-if="group.separator" class="mx-3 my-2" />
                 </VaList>
@@ -41,7 +41,8 @@ import { useColors } from 'vuestic-ui';
 
 const { colors, setHSLAColor } = useColors();
 const hoverColor = computed(() => setHSLAColor(colors.focus, { a: 0.1 }))
-const isShown = useState('isShown', () => false);
+const isShownState = useState('isShown', () => false);
+const isShown = isShownState.value;
 
 type ProfileListItem = {
     name: string;
@@ -68,12 +69,12 @@ withDefaults(
                 list: [
                     {
                         name: 'profile',
-                        to: 'preferences',
+                        to: '',
                         icon: 'mso-account_circle',
                     },
                     {
                         name: 'settings',
-                        to: 'settings',
+                        to: '',
                         icon: 'mso-settings',
                     },
                 ],
@@ -85,7 +86,7 @@ withDefaults(
 
                     {
                         name: 'logout',
-                        to: 'login',
+                        to: '',
                         icon: 'mso-logout',
                     },
                 ],
